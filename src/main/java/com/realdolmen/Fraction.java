@@ -27,11 +27,12 @@ public class Fraction {
 
     }
 
-    public Boolean equals(Fraction f) {
+    @Override
+    public boolean equals(Object o) {
         Fraction a = this.simplify();
-        f = f.simplify();
+        Fraction b = ((Fraction)o).simplify();
 
-        return a.numerator == f.numerator && a.denominator == f.denominator;
+        return a.numerator == b.numerator && a.denominator == b.denominator;
     }
 
     public Double asDouble() {
