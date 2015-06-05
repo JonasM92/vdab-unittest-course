@@ -8,14 +8,30 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+
     public Fraction(int numerator, int denominator) {
         this.denominator=denominator;
         this.numerator=numerator;
     }
 
     public Fraction simplify() {
-        this.numerator= numerator/Utilities.greatestCommonFactor(numerator,denominator);
-        this.denominator= denominator/Utilities.greatestCommonFactor(numerator,denominator);
+        this.setNumerator(numerator/Utilities.greatestCommonFactor(numerator,denominator));
+        this.setDenominator(denominator/Utilities.greatestCommonFactor(numerator,denominator));
 
         return this;
     }
@@ -36,7 +52,7 @@ public class Fraction {
     }
 
     public Double asDouble() {
-        return (double)this.numerator/(double)this.denominator;
+        return (double)this.getNumerator()/(double)this.getDenominator();
     }
 
 }
