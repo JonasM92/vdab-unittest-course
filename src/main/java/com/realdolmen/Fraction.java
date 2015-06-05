@@ -30,8 +30,9 @@ public class Fraction {
     }
 
     public Fraction simplify() {
-        this.setNumerator(numerator/Utilities.greatestCommonFactor(numerator,denominator));
-        this.setDenominator(denominator/Utilities.greatestCommonFactor(numerator,denominator));
+        int i = Utilities.greatestCommonFactor(numerator, denominator);
+        this.setNumerator(numerator/i);
+        this.setDenominator(denominator/i);
 
         return this;
     }
